@@ -1,9 +1,9 @@
 /**
  * Function Inside a Function
  *
- * - function definitions/scopes are invisible until they are called.
- * - local execution context created.
- * - function done once it has encountered a 'return' or 'closing bracket'.
+ * - Function definitions/scopes are invisible until they are called.
+ * - Local execution context created when function is called.
+ * - Function has completed once it has encountered a 'return' or 'closing bracket'.
  * 
  * **/
 

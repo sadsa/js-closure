@@ -2,6 +2,7 @@
  * Lexical Scope
  *
  * - Backwards lookup of scope variables  
+ * - Local Context => Calling Context => Global Context 
  * - Lookup until 'undefined'
  * 
  * **/
