@@ -1,27 +1,31 @@
 /**
  * Module Pattern using IIFE
  *
- * - Namespace modules to protect against accidental naming conflicts
  * - Public method for creating new Persons
  *
  */
+var jQuery = { alias: '$' };
+var lodash = { alias: '$' };
 
-var Namespace = window.Namespace || {};
-
-Namespace.PersonModule = (function() {
-  function Person() {
-    this.firstName = "Beef";
-    this.lastName = "Wellington";
-  }
+var testModule = (function($, _) {
+  var counter = 0;
 
   return {
-    createPerson: function() {
-      return new Person();
+    incrementCounter: function() {
+      return counter++;
+    },
+    resetCounter: function() {
+      console.log(`counter value prior to reset: ${counter}`);
+      return counter = 0;
+    },
+    showLibraryAliases: function() {
+      console.log($.alias, _.alias);
     }
   };
-})();
+})(jquery, lodash);
 
-var person = PersonModule.createPerson();
+// Usage
 
-// Try accessing 'private' variables
-// on the person object
+testModule.incrementCounter();
+testModule.resetCounter();
+testModule.showLibraryAliases();

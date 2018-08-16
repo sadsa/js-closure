@@ -1,25 +1,31 @@
 /**
  * Returning Object from a Function
- * 
- * - Same as previous example
- * - createPerson returns an object and the 
- *   Closure Scope of the createPerson function 
- * - firstName and lastName are still public
- * 
+ *
+ * PROS
+ * - Simple abstraction from Object Literal
+ * - Closure Scope of the returned createPerson function
+ *   allows us to emulate private variables in JavaScript
+ *
+ * CONS
+ * - Still has access
+ *
  */
 
 function createPerson() {
-    var returnObj = {
-        firstName: 'Beef',
-        lastName: 'Wellington',
-        getFirstName: function() {
-            return this.firstName
-        },
-        getLastName: function() {
-            return this.lastName
-        }
-    };
-    return returnObj;
+  // private members
+  var _firstName = "Beef";
+  var _lastName = "Wellington";
+
+  // public API
+  var returnObj = {
+    getFirstName: function() {
+      return _firstNamel;
+    },
+    getLastName: function() {
+      return _lastName;
+    }
+  };
+  return returnObj;
 }
 
 var person = createPerson();
