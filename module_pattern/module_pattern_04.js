@@ -1,11 +1,17 @@
 /**
  * Module Pattern using IIFE
  *
- * - Public method for creating new Persons
+ * - Private variable sheilding through closure
+ * - Import globals (i.e. jQuery) as local aliases
  *
  */
+
+// Third Party Libraries
+
 var jQuery = { alias: '$' };
 var lodash = { alias: '$' };
+
+// Module
 
 var testModule = (function($, _) {
   var counter = 0;

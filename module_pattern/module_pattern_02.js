@@ -7,7 +7,7 @@
  *   allows us to emulate private variables in JavaScript
  *
  * CONS
- * - Still has access
+ * - Still has access from outside of function scope
  *
  */
 
