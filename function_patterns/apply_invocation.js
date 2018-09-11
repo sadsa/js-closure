@@ -8,12 +8,34 @@
  *
  */
 
-function add(num, num2) {
-  return num + num2;
+var calculator = {
+  value: 2
+}
+
+function add(num) {
+  return num + this.value;
 }
 
 var nums = [5, 2]; // parameters for our function
-var sum = add.apply(null, nums);
+result = add(nums[0])
+
+console.log(result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 1. value of 'this' is null
 // 2. 'apply' method passes 5 and 2 to the 'add' method
